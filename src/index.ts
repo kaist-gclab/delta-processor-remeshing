@@ -1,5 +1,7 @@
+import { cleanModel } from './clean';
 import { computeModelAverageAspectRatio, computeModelMinimumAngle, computeModelQuality } from './evaluation';
 import { loadFile } from './load';
+import { phaseOne } from './remeshingPhaseOne';
 import { saveFile } from './save';
 
 const InputObjFilePath = '';
@@ -21,6 +23,11 @@ async function main() {
     };
 
     console.log('input');
+    evaluate();
+
+    console.log('phaseOne');
+    phaseOne(model, 25);
+    cleanModel(model);
     evaluate();
     await saveFile(OutputObjFilePath, model);
 }
