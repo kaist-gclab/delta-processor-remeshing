@@ -42,3 +42,7 @@ export function vectorAToB(a: Vertex, b: Vertex): Vertex {
         z: b.z - a.z,
     };
 }
+
+export function checkIfFaceCollapsed(face: Face): boolean {
+    return face.v1 === face.v2 || face.v2 === face.v3 || face.v1 === face.v3;
+}
