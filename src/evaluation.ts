@@ -73,7 +73,7 @@ function clamp(value: number, min: number, max: number): number {
     return value;
 }
 
-function getAngleDeg(prev: Vertex, current: Vertex, next: Vertex): number {
+export function getAngleDeg(prev: Vertex, current: Vertex, next: Vertex): number {
     const left = vectorAToB(current, prev);
     const right = vectorAToB(current, next);
     const abSinTheta = length(cross(left, right));
