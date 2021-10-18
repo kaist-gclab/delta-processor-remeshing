@@ -1,11 +1,13 @@
 import { computeModelAverageAspectRatio, computeModelMinimumAngle, computeModelQuality } from './evaluation';
-import { loadFile } from './loader';
+import { loadFile } from './load';
+import { saveFile } from './save';
 
-const ObjFilePath = '';
+const InputObjFilePath = '';
+const OutputObjFilePath = 'output.obj';
 
 async function main() {
     console.log('delta-processor-remeshing');
-    const model = await loadFile(ObjFilePath);
+    const model = await loadFile(InputObjFilePath);
     console.log(`${model.vertices.length} vertices`);
     console.log(`${model.faces.length} faces`);
 
@@ -15,5 +17,7 @@ async function main() {
     console.log(`Quality ${modelQuality}`);
     console.log(`AverageAspectRatio ${modelAverageAspectRatio}`);
     console.log(`MinimumAngle ${modelMinimumAngle}`);
+
+    await saveFile(OutputObjFilePath, model);
 }
 main();
