@@ -34,7 +34,7 @@ export function computeModelAverageAspectRatio(model: Model): number {
 }
 
 const AspectRatioConstantFactor = 1 / 8;
-function computeFaceAspectRatio(model: Model, face: Face): number {
+export function computeFaceAspectRatio(model: Model, face: Face): number {
     const { p, q, r } = getEdges(model, face);
     const lengthP = length(p);
     const lengthQ = length(q);
