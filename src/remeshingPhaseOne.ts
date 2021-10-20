@@ -58,12 +58,7 @@ function collapseLessThanMininumAngle(model: Model, minimumAngleDeg: number) {
 }
 
 function collapseEdge(model: Model, a: number, b: number) {
-    model.vertices[b].x += model.vertices[a].x;
-    model.vertices[b].y += model.vertices[a].y;
-    model.vertices[b].z += model.vertices[a].z;
-    model.vertices[b].x *= 0.5;
-    model.vertices[b].y *= 0.5;
-    model.vertices[b].z *= 0.5;
+    model.vertices[b] = weighted(model.vertices[a], model.vertices[b], 0.5);
 
     for (const face of model.faces) {
         face.v1 = changeIf(face.v1, a, b);
