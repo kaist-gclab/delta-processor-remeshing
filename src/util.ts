@@ -46,3 +46,10 @@ export function vectorAToB(a: Vertex, b: Vertex): Vertex {
 export function checkIfFaceCollapsed(face: Face): boolean {
     return face.v1 === face.v2 || face.v2 === face.v3 || face.v1 === face.v3;
 }
+
+export function weighted(a: Vertex, b: Vertex, weightA: number): Vertex {
+    const x = a.x * weightA + b.x * (1 - weightA);
+    const y = a.y * weightA + b.y * (1 - weightA);
+    const z = a.z * weightA + b.z * (1 - weightA);
+    return { x, y, z };
+}
