@@ -16,7 +16,7 @@ export function phaseOne(model: Model, minimumAngleDeg: number) {
     }
 }
 
-function collapseLessThanMininumAngle(model: Model, minimumAngleDeg: number) {
+function collapseLessThanMininumAngle(model: Model, minimumAngleDeg: number): boolean {
     let updated: boolean = false;
 
     for (let faceId = 0; faceId < model.faces.length; faceId++) {
