@@ -2,7 +2,7 @@ import { getAngleDeg } from './evaluation';
 import { Model } from './types';
 import { checkIfFaceCollapsed, getVertices } from './util';
 
-const PhaseOneSteps = 100;
+const PhaseOneSteps = 8;
 
 export function phaseOne(model: Model, minimumAngleDeg: number) {
     for (let step = 1; step <= PhaseOneSteps; step++) {
