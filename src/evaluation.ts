@@ -87,3 +87,15 @@ export function getAngleDeg(prev: Vertex, current: Vertex, next: Vertex): number
     const thetaDeg = thetaRad * 180 / Math.PI;
     return thetaDeg;
 }
+
+
+export function printEvaluation(model: Model) {
+    console.log(`${model.vertices.length} vertices`);
+    console.log(`${model.faces.length} faces`);
+    const modelQuality = computeModelQuality(model);
+    const modelAverageAspectRatio = computeModelAverageAspectRatio(model);
+    const modelMinimumAngle = computeModelMinimumAngle(model);
+    console.log(`Quality ${modelQuality}`);
+    console.log(`AverageAspectRatio ${modelAverageAspectRatio}`);
+    console.log(`MinimumAngle ${modelMinimumAngle}`);
+}
