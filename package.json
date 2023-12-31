@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/kaist-gclab/delta-processor-remeshing#readme",
   "dependencies": {
-    "typescript": "^4.9.3"
     "@types/node": "^20.10.6",
     "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
